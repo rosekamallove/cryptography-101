@@ -1,6 +1,6 @@
 ### Cryptography
 
-The mysterious discipline of **cryptography** is the backbone of the internet. Without it,
+The mysterious discipline of cryptography is the backbone of the internet. Without it,
 there would be no secrets and no privacy in the digital world. As a developer, you don’t
 need to understand the math that goes into cryptography, but it’s absolutely essential to
 know key concepts like hashes, salt, keypairs, encryption, and signing.
@@ -13,7 +13,7 @@ The follow tutorial explains essential cryptography concepts and implements then
 
 The word hash actually has [culinary roots](https://softwareengineering.stackexchange.com/questions/108124/why-it-is-called-hash-table-or-hash-function-hash-doesnt-make-any-sense-t). It means to _chop and mix_ and that perfectly describes what a
 hashing function does. It takes an input value of any length and outputs a fixed length value. Hashing algorithms,
-like SHA (Secure Hashing Algorithm), produce a random, unique, fixed-length string from a given input. They are
+like **SHA** (Secure Hashing Algorithm), produce a random, unique, fixed-length string from a given input. They are
 often used to compare two values, like passwords, for equality.
 
 - The same input will always produce the same output.
@@ -45,7 +45,7 @@ password = "hi-mom";
 const hash2 = hash(password);
 const match = hash1 === hash2;
 
-console.log(match ? "✔️  good password" : "❌  password does not match");
+console.log(match ? "good password" : "password does not match");
 ```
 
 <br>
@@ -119,9 +119,9 @@ originator of the data. Using a different key produces a different output.
 - Only someone with the key can create an authentic hash
 
 <pre><p>
-Hello World  --> {Hashing Function} => jibbrish(hashed stuff)
-               |                    |
-               |____ Shared Key ____|
+              Hello World  --> {Hashing Function} => jibbrish(hashed stuff)
+                             |                    |
+                             |____ Shared Key ____|
 </p></pre>
 
 **Implementation:**
@@ -153,9 +153,9 @@ is used to encrypt and decrypt the message.
 - Same key used to encrypt and decrypt message
 
 <pre><p>
-Hello World  --encrypt--> {jibbrish} --decrypt--> Hello World
-                 |                        |
-                 |______ Shared Key ______|
+              Hello World  --encrypt--> {jibbrish} --decrypt--> Hello World
+                               |                        |
+                               |______ Shared Key ______|
 </p></pre>
 
 **Implementation:**
@@ -234,10 +234,10 @@ The browser finds the public key of an SSL certificate installed on the website,
 you send, then the private key decrypts it.
 
 <pre><p>
-Hello World  --encrypt--> {jibbrish} --decrypt--> Hello World
-                 |                        |
-                 |                        |
-              Public Key              Private Key
+          Hello World  --encrypt--> {jibbrish} --decrypt--> Hello World
+                           |                        |
+                           |                        |
+                        Public Key              Private Key
 </p></pre>
 
 **Implementation:**
